@@ -39,3 +39,4 @@ Crear una aplicación básica de lista de tareas que demuestre conocimientos fun
 * Implementar llamadas a la API de Express usando **fetch**.
 * Configurar **variables de entorno** tanto para la API como para el frontend.
 * Usar **CSS básico** para darle estilo a la aplicación.
+git push -u origin main
