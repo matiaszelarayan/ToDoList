@@ -6,8 +6,22 @@ import { defineConfig } from "eslint/config";
 
 
 export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"] },
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], languageOptions: { globals: globals.browser } },
-  tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    plugins: { js, '@typescript-eslint': tseslint.plugin, react: pluginReact },
+    extends: [
+      "js/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended"
+    ],
+    languageOptions: { globals: globals.browser },
+    rules: {
+      // Desactiva la regla de React en JSX Scope para React 17+
+      "react/react-in-jsx-scope": "off"
+      // Puedes agregar más reglas personalizadas aquí
+    },
+    settings: {
+      react: { version: "detect" }
+    }
+  }
 ]);
