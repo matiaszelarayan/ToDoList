@@ -17,7 +17,8 @@ export default defineConfig([
     languageOptions: { globals: globals.browser },
     rules: {
       // Desactiva la regla de React en JSX Scope para React 17+
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off", // Desactiva la validación de tipos de propiedades en componentes de clase
       // Puedes agregar más reglas personalizadas aquí
     },
     settings: {
